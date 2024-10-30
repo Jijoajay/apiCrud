@@ -1,0 +1,29 @@
+.centeredEditUserOffCanvas {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  max-width: 500px !important;
+  height: 55% !important;
+  width: 100% !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+  z-index: 1050 !important;
+  transition: 0.25s !important;
+  border-radius: 7px !important;
+  /* background-color: beige; */
+}
+
+.editUserTitle {
+  font-family: Roboto !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 23.44px !important;
+  text-align: left;
+  color: #3474eb !important;
+}
+
+.editUserbtnsParent {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2%;
+}

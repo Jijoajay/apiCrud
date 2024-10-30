@@ -1,0 +1,16 @@
+.headerMainContainer {
+  height: 11vh;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iconBgImage {
+  position: absolute;
+  width: 82px;
+  height: 101px;
+  left: 72px;
+  top: 8px;
+  background: url(7813619_40-08.png);
+}

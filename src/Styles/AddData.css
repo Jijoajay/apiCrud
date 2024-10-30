@@ -1,0 +1,30 @@
+.centeredOffcanvas {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  inset: 0 !important;
+  width: 100%;
+  height: 60%;
+  min-height: 400px;
+  margin: auto;
+  border-radius: 9px;
+  padding: 0 !important;
+  /* border: 10px solid black; */
+  background-color: beige;
+}
+
+.titles {
+  font-family: Roboto !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 23.44px !important;
+  text-align: left;
+  color: #3474eb !important;
+}
+
+.badgeContainer {
+  margin-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3%;
+}

@@ -1,0 +1,83 @@
+.accountMastersTitle {
+  font-family: Roboto;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 30.47px;
+  text-align: left;
+  color: #3474eb !important;
+}
+
+.accountMasterTableHead {
+  font-family: Roboto !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  line-height: 21.09px !important;
+  text-align: left !important;
+  color: #505050 !important;
+}
+
+.accountMasterTableData {
+  font-family: Roboto !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 16.41px !important;
+  text-align: left !important;
+  color: #505050 !important;
+}
+
+.filterContainer {
+  display: flex;
+  justify-content: space-evenly !important;
+}
+
+.filterOptions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 125px;
+  border-radius: 7px;
+  margin: 1%;
+  margin-top: 2%;
+  background-color: white;
+}
+
+.filterOptions:hover {
+  transition: 0.3s;
+  box-shadow: 5px 5px 14px black;
+  transform: scale(1.05, 1.05);
+}
+
+.filterInputBox {
+  height: 75% !important;
+}
+
+.dropDownOption {
+  margin-left: 2%;
+}
+
+.filterButtonParent {
+  margin-right: 2%;
+}
+
+/* //Offcanvas */
+
+.btnContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5%;
+}
+
+.mainParentaaaa {
+  background-color: beige;
+  /* min-height: 100vh; */
+}
+
+.tableParent {
+  margin-top: 2%;
+}
+
+.tableParent:hover {
+  box-shadow: 5px 5px 15px black;
+  transition: 0.3s;
+  transform: scale(1.025, 1.025);
+}

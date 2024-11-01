@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 
-export const Editdata = ({ value, id ,onSubmitclick }) => {
+export const Editdata = ({ value, id,closeEditform, fetchData}) => {
   const {
     accessTo: {
       isStudent,
@@ -26,6 +26,8 @@ export const Editdata = ({ value, id ,onSubmitclick }) => {
   const [updatedaccountview, setaccountview] = useState(isAccountView || false);
   const [updatedreportcheck, setreportcheck] = useState(isReports || false);
   const [updatedaccountmastercheck, setaccountmastercheck] = useState(isAccountMaster || false);
+  const [Error,setError] = useState('')
+console.log(fetchData);
 
   console.log('This is id from editdataform', id);
 
@@ -55,9 +57,13 @@ export const Editdata = ({ value, id ,onSubmitclick }) => {
         });
         toast.success('Data successfully Updated',{autoClose:2000});
         console.log('Editdata function executed');
-        onSubmitclick()
-      } catch (error) {
-        toast.error('Error occurred while Updating data:',{autoClose:2000});
+        fetchData()
+        setTimeout(() => {
+          closeEditform()
+        }, 1000);
+      }
+      catch (error) {
+        toast.error( error.response?.data?.message);
       }
     } else {
       toast.error('Input field Cannot be left empty',{autoClose:2000});

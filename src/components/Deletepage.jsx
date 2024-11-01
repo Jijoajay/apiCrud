@@ -8,20 +8,23 @@ import { toast } from 'react-toastify';
 export const Deletepage = () => {
     const { id } = useParams();
     const [userdata, setuserdata] = useState({});
+    
     const getSelecteduserdata = async () => {
         try { 
-          const response = await axios.get(`https://schoolmanagementsystem-p1od.onrender.com/api/getUserById/${id}`);
+          const response = await axios.get(`https://schoolmanagementsystem-p1od.onrender.com/api/getUserById/${id}/`);
           console.log("Response data:", response.data.data);
           setuserdata(response.data.data);
-          toast.success('Data fetched successfully', { autoClose: 2000 });
+          toast.success('Data fetched successfully');
         } catch (err) {
           console.error("Error fetching user data:", err);
-          toast.error('Error occurred while fetching user data', { autoClose: 2000 });
+          toast.error('Error occurred while fetching user data');
         } 
       };
+      
         useEffect(() => {
-    getSelecteduserdata();
-  }, []); 
+            
+            getSelecteduserdata();
+        }, [id]); 
 
     console.log('Passed Id:', id);
 
@@ -32,8 +35,8 @@ export const Deletepage = () => {
             </div>
             <br />
             <div className="body">  
-                {Object.entries(userdata).length > 0 && <Databox userData={userdata} id = {id} onSubmitclick={getSelecteduserdata}/>}  
-             
+                {userdata && Object.entries(userdata).length > 0 && 
+                <Databox userData={userdata} id = {id} getData={getSelecteduserdata}/>}  
             </div>
         </div>
     );

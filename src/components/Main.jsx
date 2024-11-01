@@ -9,9 +9,8 @@ import { toast, ToastContainer } from 'react-toastify';
 export const sharecontext = createContext();
 
 export const Main = () => {
-
-  const[searchvalue,setsearchvalue] = useState('')
   const navigate = useNavigate();
+  const[searchvalue,setsearchvalue] = useState('')
   const [Data, setData] = useState([]);
   
   async function Getdata() {
@@ -30,7 +29,7 @@ export const Main = () => {
 
   function passIDtourl(id) {
     navigate(`/Deletepage/${id}`);
-    console.log('id',id);
+    // console.log('id',id);
   }
 
   return (
@@ -38,7 +37,7 @@ export const Main = () => {
       <div className="parent">
         <div className="header ps-2 pe-2 ">
           <ToastContainer/>
-          <Filterheader searchvalue = {setsearchvalue} />
+          <Filterheader searchvalue = {setsearchvalue} toggleGetdata = {Getdata} />
         </div>
         <br />
         <div className="body container">

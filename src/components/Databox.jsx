@@ -4,7 +4,7 @@ import { Editdata } from './Editdata';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
-export const Databox = ({userData,id,onSubmitclick}) => {
+export const Databox = ({userData,id,getData}) => {
     const navigation = useNavigate()
     const[editOpen,seteditOpen] = useState(false)
     const {
@@ -18,7 +18,7 @@ export const Databox = ({userData,id,onSubmitclick}) => {
         name,
         phoneNumber,
         userName,
-        password,
+        password
       } = userData;
       console.log('isaccount',isAccountMaster);
       console.log('user data from databox',userData);
@@ -44,11 +44,11 @@ export const Databox = ({userData,id,onSubmitclick}) => {
             <p style={{color:'#3474eb',fontWeight:"600",fontSize:'20px'}}>User</p>
             <div className="delete" style={{display:'flex',justifyContent:'space-between',width:'200px'}}>
                 <button className='btn btn-warning w-25' onClick={openEditform}>Edit</button>
-                <button className='btn btn-danger' onClick={deleteData}>Delete</button>
+                <button className='btn btn-danger' onClick={deleteData} >Delete</button>
             </div>
         </div>
         {editOpen && <div className="roww d-flex justify-content-center">
-            <Editdata value = {userData} id ={id} onSubmitclick={onSubmitclick}/></div>}
+            <Editdata value = {userData} id ={id} closeEditform = {openEditform} fetchData={getData}/></div>}
         <br />
         <div className="boxbody d-flex">
             <div className="keysection w-25 d-flex justify-content-center flex-column">
@@ -58,10 +58,10 @@ export const Databox = ({userData,id,onSubmitclick}) => {
                 <div className="key w-100 ps-4 "><p style={{fontWeight:"500",fontSize:'20px'}}>Password :</p></div>
             </div>
             <div className="valuesection w-75">
-                <div className="key w-100 ps-4 "><p>{userData.name}</p></div>
-                <div className="key w-100 ps-4 pt-2"><p>{userData.phoneNumber}</p></div>
-                <div className="key w-100 ps-4 pt-2"><p>{userData.userName}</p></div>
-                <div className="key w-100 ps-4 pt-2"><p>{userData.password}</p></div>
+                <div className="key w-100 ps-4 "><p>{name}</p></div>
+                <div className="key w-100 ps-4 pt-2"><p>{phoneNumber}</p></div>
+                <div className="key w-100 ps-4 pt-2"><p>{userName}</p></div>
+                <div className="key w-100 ps-4 pt-2"><p>{password}</p></div>
             </div>
         </div>
         <div className="boxfooter d-flex justify-content-around pb-2 mt-3">

@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { Signupform } from './Signupform';
 import 'aos/dist/aos.css';
 
-export const Filterheader = ({searchvalue}) => {
+export const Filterheader = ({ searchvalue, toggleGetdata }) => {
+
 
     const [activeBorder, setActiveBorder] = useState('wholesale'); 
     const [data,setData] = useState([])
@@ -13,12 +14,6 @@ export const Filterheader = ({searchvalue}) => {
     function handleBorderChange(type) {
         setActiveBorder(type); 
     }
-
-    async function gettheData(){
-        const response = await axios.get('')
-        setData(response.data)
-    }
-    useEffect(()=>{gettheData()},[])
 
     const [Opensignup,setOpensignup] = useState(false)
 
@@ -43,7 +38,7 @@ export const Filterheader = ({searchvalue}) => {
                 >
                     Retail Customer
                 </div>
-                <div className="_child_ w-auto ps-2" style={{ border: 'solid #cecece 1px', borderRadius: '6px' }}>
+                {/* <div className="_child_ w-auto ps-2" style={{ border: 'solid #cecece 1px', borderRadius: '6px' }}>
                     From:
                     <input 
                         type="date" 
@@ -60,7 +55,7 @@ export const Filterheader = ({searchvalue}) => {
                         className='ps-2 border-0' 
                         onChange={(e)=>settodate(e.target.value)}
                     />
-                </div>
+                </div> */}
                 <div className="input-container ps-2 " 
                 style={{ border: 'solid #cecece 1px', borderRadius: '6px' ,width:'200px'}}>
                 <i className="bi bi-search m-0 p-0 "></i> {/* FontAwesome icon */}
@@ -89,7 +84,8 @@ export const Filterheader = ({searchvalue}) => {
                 </button>
             </div>
             {Opensignup &&  <div className="rw d-flex " style={{marginLeft:'35%',marginTop:'20px'}}>
-                            <Signupform/>
+                <Signupform newCustomer={newCustomer} toggleGetdata={toggleGetdata} />
+
                             </div>}
         </>
     );
